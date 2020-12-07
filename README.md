@@ -28,7 +28,7 @@
 | category_id       | integer    | null: false       |
 | status_id         | integer    | null: false       |
 | delivery_cost_id  | integer    | null: false       |
-| prefecture_id     | references | foreign_key: true |
+| prefecture_id     | integer    | null: false       |
 | delivery_date_id  | integer    | null: false       |
 | price             | integer    | null: false       |
 | user              | references | foreign_key: true |
@@ -48,10 +48,10 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :items
+- belongs_to :item
 - has_one :buyer_info
 
-## buyer_info テーブル
+## buyer_infos テーブル
 
 | Column        | Type       | Options           |
 | ---------     | ---------- | ----------------- |
@@ -59,6 +59,7 @@
 | prefecture_id | integer    | null: false       |
 | city          | string     | null: false       |
 | address       | string     | null: false       |
+| building      | string     |
 | phone_number  | string     | null: false       |
 | order         | references | foreign_key: true |
 
