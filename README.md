@@ -11,9 +11,7 @@
 | last_name           | string  | null: false |
 | first_name_furigana | string  | null: false |
 | last_name_furigana  | string  | null: false |
-| birthday_year       | integer | null: false |
-| birthday_month      | integer | null: false |
-| birthday_day        | integer | null: false |
+| birthday            | date    | null: false |
 
 
 ### Association
@@ -30,7 +28,7 @@
 | category_id       | integer    | null: false       |
 | status_id         | integer    | null: false       |
 | delivery_cost_id  | integer    | null: false       |
-| delivery_from_id  | integer    | null: false       |
+| prefecture_id     | references | foreign_key: true |
 | delivery_date_id  | integer    | null: false       |
 | price             | integer    | null: false       |
 | user              | references | foreign_key: true |
@@ -67,5 +65,5 @@
 
 ### Association
 
-- belongs_to :orders
+- belongs_to :order
 
