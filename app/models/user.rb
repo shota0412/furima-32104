@@ -6,9 +6,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, uniqueness: true
-
-  # PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,100}+\z/i
-  # validates :encrypted_password, format: {with: PASSWORD_REGEX}
   
   NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/
   validates :first_name, presence: true, format: {with: NAME_REGEX}
