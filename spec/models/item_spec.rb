@@ -69,10 +69,30 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Price is not a number')
       end
-      it 'Active Hashのidが1では登録できない' do
+      it 'category_idが1では登録できない' do
         @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Category must be other than 1")
+      end
+      it 'status_idが1では登録できない' do
+        @item.status_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Status must be other than 1")
+      end
+      it 'delivery_cost_idが1では登録できない' do
+        @item.delivery_cost_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Delivery cost must be other than 1")
+      end
+      it 'prefecture_idが1では登録できない' do
+        @item.prefecture_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Prefecture must be other than 1")
+      end
+      it 'delivery_date_idが1では登録できない' do
+        @item.delivery_date_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Delivery date must be other than 1")
       end
     end
   end
