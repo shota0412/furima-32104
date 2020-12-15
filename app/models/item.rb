@@ -11,7 +11,6 @@ class Item < ApplicationRecord
   belongs_to_active_hash :delivery_date
 
   with_options presence: true do
-    validates :image
     validates :name
     validates :text
     validates :category_id, numericality: { other_than: 1 }
@@ -19,6 +18,7 @@ class Item < ApplicationRecord
     validates :delivery_cost_id, numericality: { other_than: 1 }
     validates :prefecture_id, numericality: { other_than: 1 }
     validates :delivery_date_id, numericality: { other_than: 1 }
-    validates :price, numericality: {greater_than_or_equal_to: 100,less_than: 10000000}, format: {with: /\A[0-9]+\z/}
+    validates :price, numericality: {greater_than_or_equal_to: 300,less_than: 10000000}, format: {with: /\A[0-9]+\z/}
+    validates :image
   end
 end
