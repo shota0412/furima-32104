@@ -49,9 +49,9 @@
 
 - belongs_to :user
 - belongs_to :item
-- has_one :buyer_info
+- has_one :address
 
-## buyer_infos テーブル
+## addresses テーブル
 
 | Column        | Type       | Options           |
 | ---------     | ---------- | ----------------- |
