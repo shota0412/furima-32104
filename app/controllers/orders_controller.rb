@@ -3,7 +3,7 @@ before_action :set_item, only: [:index, :create]
 before_action :authenticate_user!
 
   def index
-    if user_signed_in? && current_user.id == @item.user_id || @item.order.present?
+    if current_user.id == @item.user_id || @item.order.present?
       redirect_to root_path
     end 
       @order_address = OrderAddress.new
