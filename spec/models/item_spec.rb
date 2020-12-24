@@ -7,7 +7,7 @@ RSpec.describe Item, type: :model do
     @item.image = fixture_file_upload('public/images/test-image.jpg')
   end
 
-  describe 'ユーザー新規登録' do
+  describe '商品新規登録' do
     context '商品登録がうまくいくとき' do
       it '全ての項目に正しく入力されていれば登録できる' do
         expect(@item).to be_valid
